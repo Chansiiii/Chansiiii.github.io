@@ -20,92 +20,119 @@
 </head>
 
 <body>
-    <br />
-    <section class="slider-wrapper">
-        <button class="slide-arrow" id="slide-arrow-prev">
-            &#8249;
-        </button>
-    
-        <button class="slide-arrow" id="slide-arrow-next">
-            &#8250;
-        </button>
-    
-        <ul class="slides-container" id="slides-container">
-            <li class="slide">
-                <img id="drag1" src="./imgs/python.png" draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag2" src="./imgs/elephant.png"
-                    draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag3" src="./imgs/lemur.png" draggable="true"
-                    ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag4" src="./imgs/toucan.png"
-                    draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag5" src="./imgs/jellyfish.png"
-                    draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag6" src="./imgs/toucan.png"
-                    draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag11" src="./imgs/bat.png" draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag12" src="./imgs/cheetah.png"
-                    draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag13" src="./imgs/condor.png" draggable="true"
-                    ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag14" src="./imgs/ibex.png"
-                    draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag15" src="./imgs/leopard.png"
-                    draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag16" src="./imgs/macaque.png"
-                    draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag21" src="./imgs/manatee.png" draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag22" src="./imgs/octopus.png"
-                    draggable="true" ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag23" src="./imgs/starfish.png" draggable="true"
-                    ondragstart="drag(event)">
-            </li>
-            <li class="slide">
-                <img id="drag24" src="./imgs/thrush.png"
-                    draggable="true" ondragstart="drag(event)">
-            </li>
+        <section>
+            <button id="download">download graph</button>
+            <button id="upload" onclick="document.getElementById('graph-file').click();">upload graph</button>
+            <button id="addImage" onclick="document.getElementById('image-file').click();">upload image</button>
+            <input id="graph-file" type="file" style="display:none;" >
+            <input id="image-file" type="file" style="display:none;" >
+        </section>
+        <section class="slider-wrapper">
+            <button class="slide-arrow" id="slide-arrow-prev">
+                &#8249;
+            </button>
+        
+            <button class="slide-arrow" id="slide-arrow-next">
+                &#8250;
+            </button>
+        
+            <ul class="slides-container" id="slides-container">
+                <li class="slide">
+                    <img id="drag1" src="./imgs/python.png" draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag2" src="./imgs/elephant.png"
+                        draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag3" src="./imgs/lemur.png" draggable="true"
+                        ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag4" src="./imgs/toucan.png"
+                        draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag5" src="./imgs/jellyfish.png"
+                        draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag6" src="./imgs/toucan.png"
+                        draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag11" src="./imgs/bat.png" draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag12" src="./imgs/cheetah.png"
+                        draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag13" src="./imgs/condor.png" draggable="true"
+                        ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag14" src="./imgs/ibex.png"
+                        draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag15" src="./imgs/leopard.png"
+                        draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag16" src="./imgs/macaque.png"
+                        draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag21" src="./imgs/manatee.png" draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag22" src="./imgs/octopus.png"
+                        draggable="true" ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag23" src="./imgs/starfish.png" draggable="true"
+                        ondragstart="drag(event)">
+                </li>
+                <li class="slide">
+                    <img id="drag24" src="./imgs/thrush.png"
+                        draggable="true" ondragstart="drag(event)">
+                </li>
+               
+            </ul>
+        </section>
+        <!-- <section class="tabs-wrapper">
+            <div>personal - january 9, 2022 
+                <label>
+                    visible
+                    <input type="checkbox" checked>
+                </label>
+                <label>
+                    tangible
+                    <input type="checkbox" checked>
+                </label>
+            </div>
            
-        </ul>
-    </section>
-    <!-- <div id="graph" ></div> -->
-
-    <!-- <div id="graph"></div> -->
-
-    <div id="graph" ></div>
-
-    <!-- <div id="graph" ondrop="drop(event)"></div> -->
-    <!-- <div id="graph" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
-    <!-- ondragover="allowDrop(event)" -->
-
-
+            <div>framework - ferus tel 
+                <label>
+                    visible
+                    <input type="checkbox">
+                </label>
+                <label>
+                    tangible
+                    <input type="checkbox" default="false">
+                </label>
+            </div>
+            <div>framework - enneagram 
+                <input type="checkbox" label="visible">
+                <input type="checkbox" label="tangible">
+            </div>
+        </section> -->
+    </div>
+    <!-- <input id="graph-file" type="file" /> -->
+    <div class="graph-wrapper">
+        <div id="graph" ></div>s
+    </div>
 </body>
 
 </html>
