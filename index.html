@@ -20,14 +20,24 @@
 </head>
 
 <body>
-        <section>
+    <div class="messages">
+        <ul class="message-list">
+        </ul>
+        <div class="message-input">
+            <input id="chat-field" type="text" placeholder="Continue journaling..." />
+            <button id="chat-button" type="button" class="btn">Send</button>
+        </div>
+    </div>
+    <div id="graph"></div>
+    <div class="board" hidden="true">
+        <div hidden="true">
             <button id="download">download graph</button>
             <button id="upload" onclick="document.getElementById('graph-file').click();">upload graph</button>
             <button id="addImage" onclick="document.getElementById('image-file').click();">upload image</button>
             <input id="graph-file" type="file" style="display:none;" >
             <input id="image-file" type="file" style="display:none;" >
-        </section>
-        <section class="slider-wrapper">
+        </div>
+        <div class="slider-wrapper" hidden="true">
             <button class="slide-arrow" id="slide-arrow-prev">
                 &#8249;
             </button>
@@ -38,101 +48,78 @@
         
             <ul class="slides-container" id="slides-container">
                 <li class="slide">
-                    <img id="drag1" src="./imgs/python.png" draggable="true" ondragstart="drag(event)">
+                    <img id="drag1" src="./imgs/python.png" class="carousel-image" draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag2" src="./imgs/elephant.png"
+                    <img id="drag2" src="./imgs/elephant.png" class="carousel-image"
                         draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag3" src="./imgs/lemur.png" draggable="true"
+                    <img id="drag3" src="./imgs/lemur.png" draggable="true" class="carousel-image" 
                         ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag4" src="./imgs/toucan.png"
+                    <img id="drag4" src="./imgs/toucan.png" class="carousel-image" 
                         draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag5" src="./imgs/jellyfish.png"
+                    <img id="drag5" src="./imgs/jellyfish.png" class="carousel-image" 
                         draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag6" src="./imgs/toucan.png"
+                    <img id="drag6" src="./imgs/toucan.png" class="carousel-image" 
                         draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag11" src="./imgs/bat.png" draggable="true" ondragstart="drag(event)">
+                    <img id="drag11" src="./imgs/bat.png"
+                    class="carousel-image"  draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag12" src="./imgs/cheetah.png"
+                    <img id="drag12" src="./imgs/cheetah.png" class="carousel-image" 
                         draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag13" src="./imgs/condor.png" draggable="true"
+                    <img id="drag13" src="./imgs/condor.png" draggable="true" class="carousel-image" 
                         ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag14" src="./imgs/ibex.png"
+                    <img id="drag14" src="./imgs/ibex.png" class="carousel-image" 
                         draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag15" src="./imgs/leopard.png"
+                    <img id="drag15" src="./imgs/leopard.png" class="carousel-image" 
                         draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag16" src="./imgs/macaque.png"
+                    <img id="drag16" src="./imgs/macaque.png" class="carousel-image" 
                         draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag21" src="./imgs/manatee.png" draggable="true" ondragstart="drag(event)">
+                    <img id="drag21" src="./imgs/manatee.png" class="carousel-image"  draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag22" src="./imgs/octopus.png"
+                    <img id="drag22" src="./imgs/octopus.png" class="carousel-image" 
                         draggable="true" ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag23" src="./imgs/starfish.png" draggable="true"
+                    <img id="drag23" src="./imgs/starfish.png" draggable="true" class="carousel-image" 
                         ondragstart="drag(event)">
                 </li>
                 <li class="slide">
-                    <img id="drag24" src="./imgs/thrush.png"
+                    <img id="drag24" src="./imgs/thrush.png" class="carousel-image" 
                         draggable="true" ondragstart="drag(event)">
                 </li>
                
             </ul>
-        </section>
-        <!-- <section class="tabs-wrapper">
-            <div>personal - january 9, 2022 
-                <label>
-                    visible
-                    <input type="checkbox" checked>
-                </label>
-                <label>
-                    tangible
-                    <input type="checkbox" checked>
-                </label>
-            </div>
-           
-            <div>framework - ferus tel 
-                <label>
-                    visible
-                    <input type="checkbox">
-                </label>
-                <label>
-                    tangible
-                    <input type="checkbox" default="false">
-                </label>
-            </div>
-            <div>framework - enneagram 
-                <input type="checkbox" label="visible">
-                <input type="checkbox" label="tangible">
-            </div>
-        </section> -->
+        </div>
+        <div class="graph-wrapper">
+            <div id="graph"></div>
+        </div>
     </div>
+    
     <!-- <input id="graph-file" type="file" /> -->
-    <div class="graph-wrapper">
-        <div id="graph" ></div>s
-    </div>
+    
+    
 </body>
 
 </html>
