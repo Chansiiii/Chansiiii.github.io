@@ -1,125 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>Ferus Tel</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="bundle.js"></script> 
-
-    <!-- <link rel="stylesheet" href="../src/index.css">  -->
-    <script>
+    <head>
+        <title>Ferus Tel</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="bundle.js"></script> 
+        <!-- <script>
             function drag(ev) {
-                // console.log(ev)
                 ev.dataTransfer.setData("text", ev.target.id);
                 // todo cleaner img src transfer
             }
-        
-    </script>
-    <!-- todo better css management see https://wweb.dev/blog/how-to-create-static-website-npm-scripts/ -->
-</head>
+        </script> -->
+        <!-- todo better css management see https://wweb.dev/blog/how-to-create-static-website-npm-scripts/ -->
+    </head>
+    <body>
+        <div class="board">
+            <div class="buttons-wrapper">
+                <button id="download">
+                    save session
+                </button>
+                <button id="upload" onclick="document.getElementById('graph-file').click();">
+                    upload session
+                </button>
+                <button id="addImage" onclick="document.getElementById('image-file').click();">
+                    upload image
+                </button>
+                <button id="soundsconfig" onclick="document.getElementById('sounds-config-file').click();">
+                    upload image
+                </button>
+                <input id="graph-file" type="file" style="display:none;" >
+                <input id="image-file" type="file" style="display:none;" >
+                <input id="image-file" type="file" style="display:none;" >
+                <input id="sounds-config-file" type="file" style="display:none;" >
+            </div>
+            <div class="slider-wrapper">
+                <button class="slide-arrow" id="slide-arrow-prev">
+                    &#8249;
+                </button>
+                <ul class="slides-container" id="slides-container"></ul>
+                <button class="slide-arrow" id="slide-arrow-next">
+                    &#8250;
+                </button>
+            </div>
 
-<body>
-    <div class="messages">
-        <ul class="message-list">
-        </ul>
-        <div class="message-input">
-            <input id="chat-field" type="text" placeholder="Continue journaling..." />
-            <button id="chat-button" type="button" class="btn">Send</button>
+            <!-- <div class="container">
+                <a class="trigger" data-modal="modal-one">Open Modal</a>
+            </div> -->
+            <div class="graph-wrapper" id="graph-wrapper"/>
+        </div>
+    </body>
+    <div class="modal" id="modal-one">
+        <div class="modal-bg modal-exit"></div>
+        <div class="modal-container">
+            <form class="modal-form">
+                <label id="node-name-label" for="name">Name</label>
+                <input type="text" id="node-name-input" name="name" placeholder="graph element name">
+                <ul id="sound-options-list">
+                </ul>
+                <li class='sound-option' id="sound-options-template" hidden>
+                    <label class='option-label' for="sound-option">None default should be hidden</label>
+                    <input class='option-radio' type="radio" id="sound-option-name" name="sound-option" value="None">
+                </li>
+                <button type="submit">Save</button>
+            </form>
         </div>
     </div>
-    <div id="graph"></div>
-    <div class="board" hidden="true">
-        <div hidden="true">
-            <button id="download">download graph</button>
-            <button id="upload" onclick="document.getElementById('graph-file').click();">upload graph</button>
-            <button id="addImage" onclick="document.getElementById('image-file').click();">upload image</button>
-            <input id="graph-file" type="file" style="display:none;" >
-            <input id="image-file" type="file" style="display:none;" >
-        </div>
-        <div class="slider-wrapper" hidden="true">
-            <button class="slide-arrow" id="slide-arrow-prev">
-                &#8249;
-            </button>
-        
-            <button class="slide-arrow" id="slide-arrow-next">
-                &#8250;
-            </button>
-        
-            <ul class="slides-container" id="slides-container">
-                <li class="slide">
-                    <img id="drag1" src="./imgs/python.png" class="carousel-image" draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag2" src="./imgs/elephant.png" class="carousel-image"
-                        draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag3" src="./imgs/lemur.png" draggable="true" class="carousel-image" 
-                        ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag4" src="./imgs/toucan.png" class="carousel-image" 
-                        draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag5" src="./imgs/jellyfish.png" class="carousel-image" 
-                        draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag6" src="./imgs/toucan.png" class="carousel-image" 
-                        draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag11" src="./imgs/bat.png"
-                    class="carousel-image"  draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag12" src="./imgs/cheetah.png" class="carousel-image" 
-                        draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag13" src="./imgs/condor.png" draggable="true" class="carousel-image" 
-                        ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag14" src="./imgs/ibex.png" class="carousel-image" 
-                        draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag15" src="./imgs/leopard.png" class="carousel-image" 
-                        draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag16" src="./imgs/macaque.png" class="carousel-image" 
-                        draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag21" src="./imgs/manatee.png" class="carousel-image"  draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag22" src="./imgs/octopus.png" class="carousel-image" 
-                        draggable="true" ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag23" src="./imgs/starfish.png" draggable="true" class="carousel-image" 
-                        ondragstart="drag(event)">
-                </li>
-                <li class="slide">
-                    <img id="drag24" src="./imgs/thrush.png" class="carousel-image" 
-                        draggable="true" ondragstart="drag(event)">
-                </li>
-               
-            </ul>
-        </div>
-        <div class="graph-wrapper">
-            <div id="graph"></div>
-        </div>
-    </div>
-    
-    <!-- <input id="graph-file" type="file" /> -->
-    
-    
-</body>
-
 </html>
